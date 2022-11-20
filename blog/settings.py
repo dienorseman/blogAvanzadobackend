@@ -86,7 +86,7 @@ ROOT_URLCONF = 'blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.environ.get('BUILD_DIR')],
+        'DIRS': [str(os.environ.get('BUILD_DIR'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -173,7 +173,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATICFILES_DIRS = [
-    os.environ.get('BUILD_DIR') + 'static'
+    str(os.environ.get('BUILD_STATIC_DIR'))
 ]
 
 # Default primary key field type
